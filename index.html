@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <li><a href="#">Home</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#machine-learning">Machine Learning?</a></li>
+        </nav>
+    </header>
+    <main>
+        <h1>Accessible Automated Tooling/Testing</h1>
+        <blockquote>Accessible design is good design - it benefits people who don't have disabilities as well as people who do. Accessibility is about removing barriers and providing the benefits of technology for everyone</blockquote>
+        <figcaption>- Steve Ballmer</figcaption>
+        <h3>Why is it difficult to diagnose accessibility issues?</h3>
+        <p>When a site has an issue with core functionality, it is easy to see. Something doesn't behave or appear correctly, and it is often obvious how it can be addressed.</p>
+        <p>For users not utilizing assistive technologies, accessibility issues are often <span id="emphasis">invisible</span></p>
+        <h3>How do we make accessibility issues easier to identify?</h3>
+        <p>We need to increase awareness of the types of issues that can arise with websites unoptimized for assistive technologies.</p>
+        <p>We can integrate tooling into the development lifecycle to make them <span class="fake-button" onclick="showDevVisibilityBullet(this)">&nbsp;</span><span id="dev-visibility" class="hidden">visible</span>.</p>
+        <h1>Tooling</h1>
+        <h3>Things Tooling Can Find</h3>
+        <li>Contrast issues in text</li>
+        <li>Form labels not associated with inputs</li>
+        <li>Missing alt attributes on images</li>
+        <li>Missing page metadata</li>
+        <li>Main inside of landmarks</li>
+        <li>Heading Hierarchy issues</li>
+        <li>List issues</li>
+        <li>Duplicate IDs/Link Text</li>
+        <br>
+        <p>Automated testing can't catch all accessibility issues, but it can catch a lot. Estimates say automated scanning can catch from 20 to 57% of common issues.</p>
+        <p>Automated testing <span id="emphasis">does not replace a manual review</span>, but it can reduce the surface-area needed for review and helps to ensure a high-quality codebase.</p>
+        <h3>Things Tooling Can't Find (yet)</h3>
+        <ul>
+            <li>Poor alt, heading, and hyperlink text</li>
+            <li>Poor tag usage</li>
+            <li>Bad reading or tab order</li>
+            <li>Hidden content</li>
+            <li>Poor focus/active/hover states</li>
+            <li>Unclear instructions and error messages</li>
+        </ul>
+        <h2 id="tools">Tools of the Trade</h2>
+        <h3>Developer Tooling</h3>
+        <ul>
+            <li>AXE VSCode Extension</li>
+            <li>Google Lighthouse</li>
+            <li>CSS Bookmarklet</li>
+            <li>WAVE (Web Accessibility Evaluation Tool)</li>
+        </ul>
+        <h3>Linting</h3>
+        <ul>
+            <li>Linters</li>
+            <ul>
+                <li>Axe-core</li>
+                <li>Lighthouse (node module)</li>
+                <li>JSX-ally for React</li>
+                <li>AccessLint.js (Github Actions has a template for this)</li>
+                <li>Pa11y (can be set up with dashboards/monitoring)</li>
+            </ul>
+            <li>Can setup pre-commit, pre-push hooks with Husky</li>
+            <li>Can add to CI/CD Pipeline to prevent merges/fail builds</li>
+        </ul>
+        <h3>Testing</h3>
+        <ul>
+            <li>Unit Testing with standard tools</li>
+            <ul>
+                <li>Can test interaction/focus states</li>
+                <li>Aria-states</li>
+                <li>Axe has unit testing helper functions</li>
+            </ul>
+            <li>Integration Testing with headless browsers like Selenium, Puppeteer</li>
+            <ul>
+                <li>Checks page/level rules</li>
+                <li>Color contrast</li>
+                <li>Keyboard navigation</li>
+            </ul>
+        </ul>
+        <h2 id="machine-learning">Machine Learning</h2>
+        <div class="row">
+            <div>
+                <p>Instagram uses AI to write alt text for posted images.</p>
+                <p>It recognized I was standing in Times Square, and that there were 5 people in the foreground and a crowd of people in the background?</p>
+                <p>What gaps can machine learning fill?</p>
+            </div>
+            <div>
+                <img src="assets/TimesSquare.png">
+                <img src="assets/DOM.png">
+            </div>
+        </div>
+    </main>
+    <footer>
+        Brought to you by the Accessibility SO. Also, shoutout to <a href="https://watercss.kognise.dev/">Water.css</a> for being a super easy drop-in, no-frills default styles css framework.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    border-bottom: 1px solid grey;;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    li {
+        list-style: none;
+    }
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+.fake-button {
+    outline: 1px solid grey;
+    border-radius: 4px;
+    display: inline-block;
+    width: 40px;
+
+    &:hover {
+        background: #35465a;
+        cursor: pointer;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#emphasis {
+    color: #91845b;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
